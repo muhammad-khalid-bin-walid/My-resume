@@ -3,45 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Portfolio of Muhammad Khalid Bin Walid</title>
+    <meta name="description" content="Resume of Muhammad Khalid Bin Walid, Junior Penetration Tester skilled in network security, vulnerability scanning, and web application testing.">
+    <meta name="keywords" content="penetration tester, cybersecurity, ethical hacking, resume, Muhammad Khalid Bin Walid">
+    <meta name="author" content="Muhammad Khalid Bin Walid">
+    <meta property="og:title" content="Muhammad Khalid Bin Walid - Resume">
+    <meta property="og:description" content="Professional resume of a Junior Penetration Tester with expertise in security testing and vulnerability exploitation.">
+    <meta property="og:type" content="website">
+    <title>Muhammad Khalid Bin Walid - Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        .section-header {
+            border-bottom: 2px solid #1e40af;
+        }
+        .hover-scale {
+            transition: transform 0.2s ease-in-out;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            header, footer {
+                background: none;
+                color: black;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>Muhammad Khalid Bin Walid</h1>
-        <p>Ethical hacker and Junior Pentester</p>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Header -->
+    <header class="bg-blue-800 text-white text-center py-12">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Muhammad Khalid Bin Walid</h1>
+        <p class="text-xl md:text-2xl mt-2 font-medium">Junior Penetration Tester</p>
+        <div class="mt-4 flex justify-center space-x-6 text-lg no-print">
+            <a href="mailto:pentester.walid@gmail.com" class="hover:text-blue-300 flex items-center" aria-label="Email Muhammad Khalid Bin Walid">
+                <i class="fas fa-envelope mr-2"></i>Email
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-khalid-bin-walid-" target="_blank" class="hover:text-blue-300 flex items-center" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin mr-2"></i>LinkedIn
+            </a>
+            <a href="resume.pdf" download class="hover:text-blue-300 flex items-center" aria-label="Download Resume PDF">
+                <i class="fas fa-download mr-2"></i>Download PDF
+            </a>
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto p-6 md:p-8">
+        <!-- About Me -->
+        <section class="mb-12" aria-labelledby="about-me">
+            <h2 id="about-me" class="text-3xl font-semibold section-header pb-2 mb-6">About Me</h2>
+            <p class="text-lg leading-relaxed">
+                Dedicated Junior Penetration Tester with expertise in identifying and mitigating network and web application vulnerabilities. Proficient in security testing, vulnerability scanning, and developing custom tools to enhance penetration testing workflows. Committed to staying ahead of evolving cyber threats and delivering actionable security insights.
+            </p>
+        </section>
 
-    <section id="home">
-        <!-- Your home section content here -->
-    </section>
+        <!-- Technical Skills -->
+        <section class="mb-12" aria-labelledby="technical-skills">
+            <h2 id="technical-skills" class="text-3xl font-semibold section-header pb-2 mb-6">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+                    <h3 class="text-xl font-semibold text-blue-700">Programming Languages</h3>
+                    <p class="mt-2">Python, C, Bash</p>
+                </article>
+                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+                    <h3 class="text-xl font-semibold text-blue-700">Operating Systems</h3>
+                    <p class="mt-2">Kali Linux, Ubuntu, Fedora, Parrot Security, Windows</p>
+                </article>
+                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+                    <h3 class="text-xl font-semibold text-blue-700">Security Tools</h3>
+                    <p class="mt-2">Nmap, Burp Suite, Metasploit, Wireshark, OWASP ZAP, Nessus, SQLmap, Nikto, WhatWaf</p>
+                </article>
+                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+                    <h3 class="text-xl font-semibold text-blue-700">Cybersecurity Expertise</h3>
+                    <p class="mt-2">OWASP Top 10, Secure Coding, Penetration Testing Methodologies</p>
+                </article>
+            </div>
+        </section>
 
-    <section id="about">
-        <!-- Your about section content here -->
-    </section>
+        <!-- Professional Experience -->
+        <section class="mb-12" aria-labelledby="professional-experience">
+            <h2 id="professional-experience" class="text-3xl font-semibold section-header pb-2 mb-6">Professional Experience</h2>
+            <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+                <h3 class="text-xl font-semibold text-gray-800">Junior Penetration Tester</h3>
+                <p class="text-gray-600">Byte Capsule, Rajshahi, Bangladesh | July 2024 – Present</p>
+                <ul class="list-disc pl-6 mt-3 text-lg">
+                    <li>Performed comprehensive security assessments, including network mapping and vulnerability scanning, identifying critical risks for clients.</li>
+                    <li>Conducted web application penetration tests, uncovering exploitable vulnerabilities like XSS and SQL injection.</li>
+                    <li>Developed and refined penetration testing methodologies, improving efficiency based on client feedback and emerging threats.</li>
+                    <li>Collaborated with teams to deliver detailed reports and remediation strategies, enhancing client security postures.</li>
+                </ul>
+            </article>
+        </section>
 
-    <section id="projects">
-        <!-- Your projects section content here -->
-    </section>
+        <!-- Education -->
+        <section class="mb-12" aria-labelledby="education">
+            <h2 id="education" class="text-3xl font-semibold section-header pb-2 mb-6">Education</h2>
+            <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+                <h3 class="text-xl font-semibold text-gray-800">Diploma in Textile Engineering</h3>
+                <p class="text-gray-600">Pabna Textile Engineering Institute, Pabna, Bangladesh | Graduated October 2023</p>
+            </article>
+            <article class="bg-white p-6 rounded-lg shadow-lg hover-scale mt-4">
+                <h3 class="text-xl font-semibold text-gray-800">Secondary Science Education</h3>
+                <p class="text-gray-600">Banga Bandhu Academy, Dhaka, Bangladesh | Completed March 2023</p>
+            </article>
+        </section>
 
-    <section id="contact">
-        <!-- Your contact section content here -->
-    </section>
+        <!-- Certifications -->
+        <section class="mb-12" aria-labelledby="certifications">
+            <h2 id="certifications" class="text-3xl font-semibold section-header pb-2 mb-6">Certifications</h2>
+            <ul class="space-y-4">
+                <li class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+                    <span class="font-semibold text-gray-800">Ethical Hacking for Professionals (EHP)</span> | June 2024
+                </li>
+                <li class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+                    <span class="font-semibold text-gray-800">Professional SOC Analyst</span> – Byte Capsule | July 2024
+                </li>
+            </ul>
+        </section>
 
-    <footer>
-        <p>© 2024 Muhammad Khalid Bin Walid</p>
+        <!-- References -->
+        <section class="mb-12 no-print" aria-labelledby="references">
+            <h2 id="references" class="text-3xl font-semibold section-header pb-2 mb-6">References</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+                    <h3 class="text-xl font-semibold text-gray-800">Engr. Sakib Haque Zisan</h3>
+                    <p class="text-gray-600">CEO, Byte Capsule</p>
+                    <p><i class="fas fa-phone mr-2"></i>+880 1796 934898</p>
+                    <p><i class="fas fa-envelope mr-2"></i><a href="mailto:mail@bytecapsuleit.com" class="text-blue-600">mail@bytecapsuleit.com</a></p>
+                </article>
+                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+                    <h3 class="text-xl font-semibold text-gray-800">MD. Nasimujjaman Noyon</h3>
+                    <p class="text-gray-600">HR Manager, Byte Capsule</p>
+                    <p><i class="fas fa-phone mr-2"></i>+880 01316 138481</p>
+                    <p><i class="fas fa-envelope mr-2"></i><a href="mailto:pentester.nasimujjaman@gmail.com" class="text-blue-600">pentester.nasimujjaman@gmail.com</a></p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="mb-12" aria-labelledby="contact">
+            <h2 id="contact" class="text-3xl font-semibold section-header pb-2 mb-6">Contact</h2>
+            <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+                <p><strong>Address:</strong> Pabna, 6600 Bangladesh</p>
+                <p><strong>Phone:</strong> +880 1304 625096</p>
+                <p><strong>Email:</strong> <a href="mailto:pentester.walid@gmail.com" class="text-blue-600">pentester.walid@gmail.com</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/muhammad-khalid-bin-walid-" target="_blank" class="text-blue-600">muhammad-khalid-bin-walid-</a></p>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <p>&copy; <span id="current-year"></span> Muhammad Khalid Bin Walid. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript for Dynamic Year -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
-
