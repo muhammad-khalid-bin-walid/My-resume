@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional Cybersecurity Resume Design System */
+@layer base {
+  :root {
+    /* Core Brand Colors - Professional Cybersecurity Theme */
+    --background: 0 0% 98%;
+    --foreground: 220 25% 15%;
+    
+    /* Card System */
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 15%;
+    
+    /* Cybersecurity Blue Theme */
+    --primary: 214 85% 25%; /* Deep security blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 214 85% 45%; /* Lighter for glows */
+    
+    --secondary: 210 100% 97%;
+    --secondary-foreground: 214 85% 25%;
+    
+    --accent: 195 100% 50%; /* Cyan accent for tech feel */
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 210 40% 96%;
+    --muted-foreground: 220 15% 50%;
+    
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* UI Elements */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 214 85% 25%;
+    --radius: 0.75rem;
+    
+    /* Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(214 85% 25%), hsl(214 85% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(195 100% 50%), hsl(195 100% 60%));
+    --gradient-surface: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --gradient-glow: linear-gradient(135deg, hsl(214 85% 25% / 0.1), hsl(195 100% 50% / 0.1));
+    
+    /* Professional Shadows */
+    --shadow-card: 0 4px 24px hsl(214 85% 25% / 0.08);
+    --shadow-hover: 0 8px 40px hsl(214 85% 25% / 0.12);
+    --shadow-glow: 0 0 40px hsl(214 85% 45% / 0.3);
+    
+    /* Animation Variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 0 0% 95%;
+    
+    --card: 220 25% 10%;
+    --card-foreground: 0 0% 95%;
+    
+    --primary: 214 85% 45%;
+    --primary-foreground: 220 25% 8%;
+    --primary-glow: 214 85% 55%;
+    
+    --secondary: 220 25% 15%;
+    --secondary-foreground: 0 0% 95%;
+    
+    --accent: 195 100% 60%;
+    --accent-foreground: 220 25% 8%;
+    
+    --muted: 220 25% 15%;
+    --muted-foreground: 0 0% 65%;
+    
+    --border: 220 25% 20%;
+    --input: 220 25% 20%;
+    --ring: 214 85% 45%;
+    
+    --shadow-card: 0 4px 24px hsl(220 25% 0% / 0.5);
+    --shadow-hover: 0 8px 40px hsl(220 25% 0% / 0.6);
+    --shadow-glow: 0 0 40px hsl(214 85% 45% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Professional Card Components */
+  .card-professional {
+    @apply bg-card border border-border rounded-xl 
+           hover:shadow-lg transition-all duration-300 ease-out
+           hover:scale-[1.02] hover:-translate-y-1;
+    box-shadow: 0 4px 24px hsl(214 85% 25% / 0.08);
+  }
+  
+  .card-professional:hover {
+    box-shadow: 0 8px 40px hsl(214 85% 25% / 0.12);
+  }
+  
+  .card-skill {
+    @apply card-professional p-6 cursor-default;
+  }
+  
+  /* Professional Buttons */
+  .btn-professional {
+    @apply inline-flex items-center justify-center rounded-lg px-6 py-3 font-medium
+           transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply btn-professional bg-primary text-primary-foreground hover:bg-primary/90
+           focus:ring-primary shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply btn-professional bg-secondary text-secondary-foreground hover:bg-secondary/80
+           border border-border focus:ring-primary;
+  }
+  
+  .btn-accent {
+    @apply btn-professional bg-accent text-accent-foreground hover:bg-accent/90
+           focus:ring-accent shadow-lg;
+  }
+  
+  /* Section Headers */
+  .section-header {
+    @apply text-2xl md:text-3xl font-bold text-foreground mb-8 pb-3
+           border-b-2 border-primary/20 relative;
+  }
+  
+  .section-header::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-12 h-0.5 bg-primary rounded-full;
+  }
+  
+  /* Professional Grid */
+  .grid-professional {
+    @apply grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+  }
+  
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .bg-gradient-professional {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .bg-gradient-surface {
+    background: var(--gradient-surface);
+  }
+  
+  .font-inter {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px hsl(214 85% 45% / 0.3); }
+  to { box-shadow: 0 0 40px hsl(214 85% 45% / 0.6); }
+}
+
+/* Print Styles */
+@media print {
+  .no-print { display: none !important; }
+  .card-professional { box-shadow: none !important; }
+  body { background: white !important; color: black !important; }
+  * { background: transparent !important; }
+}
