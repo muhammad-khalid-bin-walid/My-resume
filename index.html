@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <style>
+                body {
+                  background-color: white; /* Ensure the iframe has a white background */
+                }
+    
+                
+              </style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,6 +40,18 @@
         .hover-scale:hover {
             transform: scale(1.02);
         }
+        .editable:hover {
+            background-color: #f0f9ff;
+            cursor: pointer;
+        }
+        .edit-mode {
+            border: 2px dashed #3b82f6;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+        }
+        .hidden {
+            display: none;
+        }
         @media print {
             body {
                 background: white;
@@ -41,14 +68,18 @@
             .no-print {
                 display: none;
             }
+            .editable {
+                background: none;
+                cursor: default;
+            }
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
     <!-- Header -->
     <header class="bg-blue-800 text-white text-center py-12">
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Muhammad Khalid Bin Walid</h1>
-        <p class="text-xl md:text-2xl mt-2 font-medium">Junior Penetration Tester</p>
+        <h1 id="name" class="text-4xl md:text-5xl font-bold tracking-tight editable" contenteditable="false">Muhammad Khalid Bin Walid</h1>
+        <p id="title" class="text-xl md:text-2xl mt-2 font-medium editable" contenteditable="false">Junior Penetration Tester</p>
         <div class="mt-4 flex justify-center space-x-6 text-lg no-print">
             <a href="mailto:pentester.walid@gmail.com" class="hover:text-blue-300 flex items-center" aria-label="Email Muhammad Khalid Bin Walid">
                 <i class="fas fa-envelope mr-2"></i>Email
@@ -59,94 +90,140 @@
             <a href="resume.pdf" download class="hover:text-blue-300 flex items-center" aria-label="Download Resume PDF">
                 <i class="fas fa-download mr-2"></i>Download PDF
             </a>
+            <button id="editToggle" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg flex items-center ml-4">
+                <i class="fas fa-edit mr-2"></i>Edit Mode
+            </button>
         </div>
     </header>
-
     <!-- Main Content -->
     <main class="max-w-5xl mx-auto p-6 md:p-8">
         <!-- About Me -->
         <section class="mb-12" aria-labelledby="about-me">
-            <h2 id="about-me" class="text-3xl font-semibold section-header pb-2 mb-6">About Me</h2>
-            <p class="text-lg leading-relaxed">
+            <div class="flex justify-between items-center">
+                <h2 id="about-me" class="text-3xl font-semibold section-header pb-2 mb-6">About Me</h2>
+                <button class="add-btn no-print bg-green-600 text-white px-3 py-1 rounded-lg text-sm hidden" data-section="about">
+                    <i class="fas fa-plus"></i> Add
+                </button>
+            </div>
+            <p id="about-content" class="text-lg leading-relaxed editable" contenteditable="false">
                 Dedicated Junior Penetration Tester with expertise in identifying and mitigating network and web application vulnerabilities. Proficient in security testing, vulnerability scanning, and developing custom tools to enhance penetration testing workflows. Committed to staying ahead of evolving cyber threats and delivering actionable security insights.
             </p>
         </section>
-
         <!-- Technical Skills -->
         <section class="mb-12" aria-labelledby="technical-skills">
-            <h2 id="technical-skills" class="text-3xl font-semibold section-header pb-2 mb-6">Technical Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+            <div class="flex justify-between items-center">
+                <h2 id="technical-skills" class="text-3xl font-semibold section-header pb-2 mb-6">Technical Skills</h2>
+                <button class="add-btn no-print bg-green-600 text-white px-3 py-1 rounded-lg text-sm hidden" data-section="skills">
+                    <i class="fas fa-plus"></i> Add
+                </button>
+            </div>
+            <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale editable" contenteditable="false">
                     <h3 class="text-xl font-semibold text-blue-700">Programming Languages</h3>
                     <p class="mt-2">Python, C, Bash</p>
                 </article>
-                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale editable" contenteditable="false">
                     <h3 class="text-xl font-semibold text-blue-700">Operating Systems</h3>
                     <p class="mt-2">Kali Linux, Ubuntu, Fedora, Parrot Security, Windows</p>
                 </article>
-                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale editable" contenteditable="false">
                     <h3 class="text-xl font-semibold text-blue-700">Security Tools</h3>
                     <p class="mt-2">Nmap, Burp Suite, Metasploit, Wireshark, OWASP ZAP, Nessus, SQLmap, Nikto, WhatWaf</p>
                 </article>
-                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale editable" contenteditable="false">
                     <h3 class="text-xl font-semibold text-blue-700">Cybersecurity Expertise</h3>
                     <p class="mt-2">OWASP Top 10, Secure Coding, Penetration Testing Methodologies</p>
                 </article>
             </div>
         </section>
-
         <!-- Professional Experience -->
         <section class="mb-12" aria-labelledby="professional-experience">
-            <h2 id="professional-experience" class="text-3xl font-semibold section-header pb-2 mb-6">Professional Experience</h2>
-            <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
-                <h3 class="text-xl font-semibold text-gray-800">Junior Penetration Tester</h3>
-                <p class="text-gray-600">Byte Capsule, Rajshahi, Bangladesh | July 2024 – Present</p>
-                <ul class="list-disc pl-6 mt-3 text-lg">
-                    <li>Performed comprehensive security assessments, including network mapping and vulnerability scanning, identifying critical risks for clients.</li>
-                    <li>Conducted web application penetration tests, uncovering exploitable vulnerabilities like XSS and SQL injection.</li>
-                    <li>Developed and refined penetration testing methodologies, improving efficiency based on client feedback and emerging threats.</li>
-                    <li>Collaborated with teams to deliver detailed reports and remediation strategies, enhancing client security postures.</li>
-                </ul>
-            </article>
+            <div class="flex justify-between items-center">
+                <h2 id="professional-experience" class="text-3xl font-semibold section-header pb-2 mb-6">Professional Experience</h2>
+                <button class="add-btn no-print bg-green-600 text-white px-3 py-1 rounded-lg text-sm hidden" data-section="experience">
+                    <i class="fas fa-plus"></i> Add
+                </button>
+            </div>
+            <div id="experience-container">
+                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale editable" contenteditable="false">
+                    <h3 class="text-xl font-semibold text-gray-800">Junior Penetration Tester</h3>
+                    <p class="text-gray-600">Byte Capsule, Rajshahi, Bangladesh | July 2024 – Present</p>
+                    <ul class="list-disc pl-6 mt-3 text-lg">
+                        <li>Performed comprehensive security assessments, including network mapping and vulnerability scanning, identifying critical risks for clients.</li>
+                        <li>Conducted web application penetration tests, uncovering exploitable vulnerabilities like XSS and SQL injection.</li>
+                        <li>Developed and refined penetration testing methodologies, improving efficiency based on client feedback and emerging threats.</li>
+                        <li>Collaborated with teams to deliver detailed reports and remediation strategies, enhancing client security postures.</li>
+                    </ul>
+                </article>
+            </div>
         </section>
-
         <!-- Education -->
         <section class="mb-12" aria-labelledby="education">
-            <h2 id="education" class="text-3xl font-semibold section-header pb-2 mb-6">Education</h2>
-            <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
-                <h3 class="text-xl font-semibold text-gray-800">Diploma in Textile Engineering</h3>
-                <p class="text-gray-600">Pabna Textile Engineering Institute, Pabna, Bangladesh | Graduated October 2023</p>
-            </article>
-            <article class="bg-white p-6 rounded-lg shadow-lg hover-scale mt-4">
-                <h3 class="text-xl font-semibold text-gray-800">Secondary Science Education</h3>
-                <p class="text-gray-600">Banga Bandhu Academy, Dhaka, Bangladesh | Completed March 2023</p>
-            </article>
+            <div class="flex justify-between items-center">
+                <h2 id="education" class="text-3xl font-semibold section-header pb-2 mb-6">Education</h2>
+                <button class="add-btn no-print bg-green-600 text-white px-3 py-1 rounded-lg text-sm hidden" data-section="education">
+                    <i class="fas fa-plus"></i> Add
+                </button>
+            </div>
+            <div id="education-container">
+                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale editable" contenteditable="false">
+                    <h3 class="text-xl font-semibold text-gray-800">Diploma in Textile Engineering</h3>
+                    <p class="text-gray-600">Pabna Textile Engineering Institute, Pabna, Bangladesh | Graduated October 2023</p>
+                </article>
+                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale mt-4 editable" contenteditable="false">
+                    <h3 class="text-xl font-semibold text-gray-800">Secondary Science Education</h3>
+                    <p class="text-gray-600">Banga Bandhu Academy, Dhaka, Bangladesh | Completed March 2023</p>
+                </article>
+            </div>
         </section>
-
         <!-- Certifications -->
         <section class="mb-12" aria-labelledby="certifications">
-            <h2 id="certifications" class="text-3xl font-semibold section-header pb-2 mb-6">Certifications</h2>
-            <ul class="space-y-4">
-                <li class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+            <div class="flex justify-between items-center">
+                <h2 id="certifications" class="text-3xl font-semibold section-header pb-2 mb-6">Certifications</h2>
+                <button class="add-btn no-print bg-green-600 text-white px-3 py-1 rounded-lg text-sm hidden" data-section="certifications">
+                    <i class="fas fa-plus"></i> Add
+                </button>
+            </div>
+            <ul id="certifications-container" class="space-y-4">
+                <li class="bg-white p-6 rounded-lg shadow-lg hover-scale editable" contenteditable="false">
                     <span class="font-semibold text-gray-800">Ethical Hacking for Professionals (EHP)</span> | June 2024
                 </li>
-                <li class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+                <li class="bg-white p-6 rounded-lg shadow-lg hover-scale editable" contenteditable="false">
                     <span class="font-semibold text-gray-800">Professional SOC Analyst</span> – Byte Capsule | July 2024
+                </li>
+                <li class="bg-white p-6 rounded-lg shadow-lg hover-scale editable" contenteditable="false">
+                    <span class="font-semibold text-gray-800">Generative AI Mastermind</span> – By Outskill | July 2025
+                </li>
+                <li class="bg-white p-6 rounded-lg shadow-lg hover-scale editable" contenteditable="false">
+                    <span class="font-semibold text-gray-800">HP LIFE (HP Foundation)</span> | February 2025
+                </li>
+                <li class="bg-white p-6 rounded-lg shadow-lg hover-scale editable" contenteditable="false">
+                    <span class="font-semibold text-gray-800">AI for Beginners</span> | February 28, 2025
+                </li>
+                <li class="bg-white p-6 rounded-lg shadow-lg hover-scale editable" contenteditable="false">
+                    <span class="font-semibold text-gray-800">Introduction to Cybersecurity Awareness</span> | February 2025
+                </li>
+                <li class="bg-white p-6 rounded-lg shadow-lg hover-scale editable" contenteditable="false">
+                    <span class="font-semibold text-gray-800">Resume Writing and Job Interviewing</span> | February 2025
                 </li>
             </ul>
         </section>
-
         <!-- References -->
         <section class="mb-12 no-print" aria-labelledby="references">
-            <h2 id="references" class="text-3xl font-semibold section-header pb-2 mb-6">References</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+            <div class="flex justify-between items-center">
+                <h2 id="references" class="text-3xl font-semibold section-header pb-2 mb-6">References</h2>
+                <button class="add-btn no-print bg-green-600 text-white px-3 py-1 rounded-lg text-sm hidden" data-section="references">
+                    <i class="fas fa-plus"></i> Add
+                </button>
+            </div>
+            <div id="references-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale editable" contenteditable="false">
                     <h3 class="text-xl font-semibold text-gray-800">Engr. Sakib Haque Zisan</h3>
                     <p class="text-gray-600">CEO, Byte Capsule</p>
                     <p><i class="fas fa-phone mr-2"></i>+880 1796 934898</p>
                     <p><i class="fas fa-envelope mr-2"></i><a href="mailto:mail@bytecapsuleit.com" class="text-blue-600">mail@bytecapsuleit.com</a></p>
                 </article>
-                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+                <article class="bg-white p-6 rounded-lg shadow-lg hover-scale editable" contenteditable="false">
                     <h3 class="text-xl font-semibold text-gray-800">MD. Nasimujjaman Noyon</h3>
                     <p class="text-gray-600">HR Manager, Byte Capsule</p>
                     <p><i class="fas fa-phone mr-2"></i>+880 01316 138481</p>
@@ -154,11 +231,15 @@
                 </article>
             </div>
         </section>
-
         <!-- Contact -->
         <section class="mb-12" aria-labelledby="contact">
-            <h2 id="contact" class="text-3xl font-semibold section-header pb-2 mb-6">Contact</h2>
-            <article class="bg-white p-6 rounded-lg shadow-lg hover-scale">
+            <div class="flex justify-between items-center">
+                <h2 id="contact" class="text-3xl font-semibold section-header pb-2 mb-6">Contact</h2>
+                <button class="add-btn no-print bg-green-600 text-white px-3 py-1 rounded-lg text-sm hidden" data-section="contact">
+                    <i class="fas fa-plus"></i> Add
+                </button>
+            </div>
+            <article id="contact-container" class="bg-white p-6 rounded-lg shadow-lg hover-scale editable" contenteditable="false">
                 <p><strong>Address:</strong> Pabna, 6600 Bangladesh</p>
                 <p><strong>Phone:</strong> +880 1304 625096</p>
                 <p><strong>Email:</strong> <a href="mailto:pentester.walid@gmail.com" class="text-blue-600">pentester.walid@gmail.com</a></p>
@@ -166,15 +247,149 @@
             </article>
         </section>
     </main>
-
     <!-- Footer -->
     <footer class="bg-gray-800 text-white text-center py-6">
         <p>&copy; <span id="current-year"></span> Muhammad Khalid Bin Walid. All rights reserved.</p>
     </footer>
-
-    <!-- JavaScript for Dynamic Year -->
+    <!-- JavaScript for Dynamic Year and Edit Functionality -->
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        const editToggle = document.getElementById('editToggle');
+        let isEditMode = false;
+        
+        editToggle.addEventListener('click', () => {
+            isEditMode = !isEditMode;
+            const editableElements = document.querySelectorAll('.editable');
+            const addButtons = document.querySelectorAll('.add-btn');
+            
+            if (isEditMode) {
+                editToggle.innerHTML = '<i class="fas fa-times mr-2"></i>Exit Edit Mode';
+                editToggle.classList.remove('bg-blue-600');
+                editToggle.classList.add('bg-red-600');
+                
+                editableElements.forEach(el => {
+                    el.contentEditable = true;
+                    el.classList.add('edit-mode');
+                });
+                
+                addButtons.forEach(btn => {
+                    btn.classList.remove('hidden');
+                });
+            } else {
+                editToggle.innerHTML = '<i class="fas fa-edit mr-2"></i>Edit Mode';
+                editToggle.classList.remove('bg-red-600');
+                editToggle.classList.add('bg-blue-600');
+                
+                editableElements.forEach(el => {
+                    el.contentEditable = false;
+                    el.classList.remove('edit-mode');
+                });
+                
+                addButtons.forEach(btn => {
+                    btn.classList.add('hidden');
+                });
+            }
+        });
+        
+        // Add functionality for add buttons
+        document.querySelectorAll('.add-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const section = e.target.getAttribute('data-section');
+                addNewItem(section);
+            });
+        });
+        
+        function addNewItem(section) {
+            switch(section) {
+                case 'skills':
+                    const skillsContainer = document.getElementById('skills-container');
+                    const newSkill = document.createElement('article');
+                    newSkill.className = 'bg-white p-6 rounded-lg shadow-lg hover-scale editable edit-mode';
+                    newSkill.contentEditable = true;
+                    newSkill.innerHTML = `
+                        <h3 class="text-xl font-semibold text-blue-700">New Skill Category</h3>
+                        <p class="mt-2">Add your skills here...</p>
+                    `;
+                    skillsContainer.appendChild(newSkill);
+                    break;
+                    
+                case 'experience':
+                    const experienceContainer = document.getElementById('experience-container');
+                    const newExperience = document.createElement('article');
+                    newExperience.className = 'bg-white p-6 rounded-lg shadow-lg hover-scale editable edit-mode mt-4';
+                    newExperience.contentEditable = true;
+                    newExperience.innerHTML = `
+                        <h3 class="text-xl font-semibold text-gray-800">Job Title</h3>
+                        <p class="text-gray-600">Company, Location | Start Date – End Date</p>
+                        <ul class="list-disc pl-6 mt-3 text-lg">
+                            <li>Job responsibility or achievement...</li>
+                        </ul>
+                    `;
+                    experienceContainer.appendChild(newExperience);
+                    break;
+                    
+                case 'education':
+                    const educationContainer = document.getElementById('education-container');
+                    const newEducation = document.createElement('article');
+                    newEducation.className = 'bg-white p-6 rounded-lg shadow-lg hover-scale editable edit-mode mt-4';
+                    newEducation.contentEditable = true;
+                    newEducation.innerHTML = `
+                        <h3 class="text-xl font-semibold text-gray-800">Degree/Certification</h3>
+                        <p class="text-gray-600">Institution, Location | Graduation Date</p>
+                    `;
+                    educationContainer.appendChild(newEducation);
+                    break;
+                    
+                case 'certifications':
+                    const certificationsContainer = document.getElementById('certifications-container');
+                    const newCertification = document.createElement('li');
+                    newCertification.className = 'bg-white p-6 rounded-lg shadow-lg hover-scale editable edit-mode';
+                    newCertification.contentEditable = true;
+                    newCertification.innerHTML = `
+                        <span class="font-semibold text-gray-800">Certification Name</span> | Date
+                    `;
+                    certificationsContainer.appendChild(newCertification);
+                    break;
+                    
+                case 'references':
+                    const referencesContainer = document.getElementById('references-container');
+                    const newReference = document.createElement('article');
+                    newReference.className = 'bg-white p-6 rounded-lg shadow-lg hover-scale editable edit-mode';
+                    newReference.contentEditable = true;
+                    newReference.innerHTML = `
+                        <h3 class="text-xl font-semibold text-gray-800">Name</h3>
+                        <p class="text-gray-600">Position, Company</p>
+                        <p><i class="fas fa-phone mr-2"></i>Phone</p>
+                        <p><i class="fas fa-envelope mr-2"></i><a href="mailto:" class="text-blue-600">Email</a></p>
+                    `;
+                    referencesContainer.appendChild(newReference);
+                    break;
+                    
+                case 'contact':
+                    const contactContainer = document.getElementById('contact-container');
+                    const newContact = document.createElement('p');
+                    newContact.className = 'editable edit-mode mt-2';
+                    newContact.contentEditable = true;
+                    newContact.innerHTML = `<strong>New Contact:</strong> Details...`;
+                    contactContainer.appendChild(newContact);
+                    break;
+                    
+                case 'about':
+                    const aboutContent = document.getElementById('about-content');
+                    aboutContent.innerHTML += `<p class="mt-4 editable edit-mode" contenteditable="true">Additional information...</p>`;
+                    break;
+            }
+        }
     </script>
 </body>
 </html>
+
+
+    
+              <script>
+                              
+              </script>
+                        </body>
+                        </html>
+                    
